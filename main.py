@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-st.title("My Mini Project Name")
+st.title("My Mini Project")
 st.image('hero.jpg', use_column_width=True)
 
 
@@ -17,8 +17,7 @@ def introduction():
          - Feature 2
          - Feature 3
     """)
-
-    c1, c2 = st.column(2)
+    c1, c2 = st.columns(2)
 
     c1.header("Column 1 Content")
     c2.header("Column 2 Content")
