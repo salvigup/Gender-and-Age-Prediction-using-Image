@@ -30,7 +30,7 @@ def execute():
     st.subheader('project working here')
 
     image_file = st.file_uploader("Upload An Image",type=['png','jpeg','jpg'])
-    img_name = st.text_input("Enter image name")
+    img_name = st.text_input('age and gender.jpg')
     btn = st.button("Predict")
 
     if btn and image_file:
