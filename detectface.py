@@ -1,4 +1,8 @@
+# Import required modules
 import cv2 as cv
+import math
+import time
+import argparse
 
 def getFaceBox(net, frame, conf_threshold=0.7):
     frameOpencvDnn = frame.copy()
@@ -24,7 +28,7 @@ def predictGender():
 
     genderProto = "gender_deploy.prototxt"
     genderModel = "gender_net.caffemodel"
-    ageNet = cv.dnn.readNet(ageModel, ageProto)
+    ageNet = cv.dnn.readNet(genderModel, genderProto)
     genderList = ['Male', 'Female']
     blob = cv.dnn.blobFromImage(face, 1, (227, 227), MODEL_MEAN_VALUES, swapRB=False)
     genderNet.setInput(blob)

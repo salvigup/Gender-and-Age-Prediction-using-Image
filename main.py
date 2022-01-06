@@ -1,5 +1,8 @@
 import streamlit as st
-
+from PIL import Image
+import cv2
+import numpy as np
+from AgeGender import scanImage
 
 st.title("My Mini Project")
 st.image('hero.jpg', use_column_width=True)
@@ -37,4 +40,11 @@ elif selOption == options[1]:
     execute()
     
 
+image_file = st.file_uploader("Upload An Image",type=['png','jpeg','jpg'])
+img_name = st.text_input("Enter image name")
+btn = st.button("Predict")
 
+if btn and image_file:
+    img = Image.open(image_file)
+    st.image(img)
+    img.save(f"uploads/{img_name}.png", img.show)
