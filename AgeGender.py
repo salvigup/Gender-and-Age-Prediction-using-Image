@@ -79,7 +79,13 @@ def scanImage(img_path):
 
         label = "{},{}".format(gender, age)
         cv.putText(frameFace, label, (bbox[0], bbox[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2, cv.LINE_AA)
-        cv.imshow("Age Gender Demo", frameface)
+        path = f"predicted/{img_path.split('/')[-1]}"
+        try:
+            cv.imwrite(f"predicted/{img_path.split('/')[-1]}", frameFace)
+        except Exception as e:
+            print(e)
+        print('IMage Predicted..')
+        return path
 
 def scanVideo():
 
