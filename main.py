@@ -5,7 +5,7 @@ import numpy as np
 from AgeGender import scanImage, scanVideo
 
 st.title("My Mini Project")
-st.image('hero.jpg', use_column_width=True)
+st.image('aaaa.jpg', use_column_width=True)
 
 
 sidebar = st.sidebar
